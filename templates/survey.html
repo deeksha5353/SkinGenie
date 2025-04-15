@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinGenie - Survey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="survey-container">
+        <h1>Personalized Skin Care Survey</h1>
+        <p class="survey-description">Help us understand your skin better to provide personalized recommendations.</p>
+        
+        <form action="/submit-survey" method="POST">
+            <!-- Skin Type Section -->
+            <div class="survey-section">
+                <h2>What's Your Skin Type?</h2>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="skin_type" value="oily" required>
+                        <div class="option-content">
+                            <h3>Oily</h3>
+                            <p>Shiny appearance, prone to breakouts</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="skin_type" value="dry">
+                        <div class="option-content">
+                            <h3>Dry</h3>
+                            <p>Feels tight, may have flaky patches</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="skin_type" value="combination">
+                        <div class="option-content">
+                            <h3>Combination</h3>
+                            <p>Oily T-zone, dry cheeks</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="skin_type" value="normal">
+                        <div class="option-content">
+                            <h3>Normal</h3>
+                            <p>Well-balanced, not too oily or dry</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Makeup Type Section -->
+            <div class="survey-section">
+                <h2>What's Your Preferred Makeup Style?</h2>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="makeup_type" value="natural" required>
+                        <div class="option-content">
+                            <h3>Natural</h3>
+                            <p>Light coverage, minimal makeup look</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="makeup_type" value="glam">
+                        <div class="option-content">
+                            <h3>Glam</h3>
+                            <p>Full coverage, bold and dramatic looks</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="makeup_type" value="creative">
+                        <div class="option-content">
+                            <h3>Creative</h3>
+                            <p>Artistic and experimental makeup styles</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="makeup_type" value="professional">
+                        <div class="option-content">
+                            <h3>Professional</h3>
+                            <p>Polished and workplace-appropriate looks</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Product Type Section -->
+            <div class="survey-section">
+                <h2>What Types of Products Do You Prefer?</h2>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="skincare">
+                        <div class="option-content">
+                            <h3>Skincare</h3>
+                            <p>Cleansers, moisturizers, serums, etc.</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="face_makeup">
+                        <div class="option-content">
+                            <h3>Face Makeup</h3>
+                            <p>Foundation, concealer, powder, etc.</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="eye_makeup">
+                        <div class="option-content">
+                            <h3>Eye Makeup</h3>
+                            <p>Eyeshadow, mascara, eyeliner, etc.</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="lip_products">
+                        <div class="option-content">
+                            <h3>Lip Products</h3>
+                            <p>Lipstick, lip gloss, lip balm, etc.</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="brushes_tools">
+                        <div class="option-content">
+                            <h3>Brushes & Tools</h3>
+                            <p>Makeup brushes, sponges, applicators</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="product_types" value="natural_organic">
+                        <div class="option-content">
+                            <h3>Natural/Organic</h3>
+                            <p>Clean beauty and natural ingredients</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Skin Concerns Section -->
+            <div class="survey-section">
+                <h2>What Are Your Main Skin Concerns?</h2>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="checkbox" name="skin_concerns" value="acne">
+                        <div class="option-content">
+                            <h3>Acne</h3>
+                            <p>Breakouts and blemishes</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skin_concerns" value="aging">
+                        <div class="option-content">
+                            <h3>Aging</h3>
+                            <p>Fine lines and wrinkles</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skin_concerns" value="dark_spots">
+                        <div class="option-content">
+                            <h3>Dark Spots</h3>
+                            <p>Hyperpigmentation and uneven tone</p>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skin_concerns" value="sensitivity">
+                        <div class="option-content">
+                            <h3>Sensitivity</h3>
+                            <p>Easily irritated skin</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="survey-actions">
+                <button type="submit" class="btn-primary">Get My Recommendations</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Add smooth transitions for option cards
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // For radio buttons, unselect other cards in the same group
+                if (this.querySelector('input[type="radio"]')) {
+                    const groupName = this.querySelector('input').name;
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(input => {
+                        input.parentElement.classList.remove('selected');
+                    });
+                }
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html> 

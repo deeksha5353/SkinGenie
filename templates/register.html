@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkinGenie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('main.index') }}"><h1>SkinGenie</h1></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.index') }}#features">Features</a></li>
+                <li><a href="{{ url_for('main.index') }}#how-it-works">How It Works</a></li>
+                <li><a href="{{ url_for('main.index') }}#products">Products</a></li>
+                <li><a href="{{ url_for('main.index') }}#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>Create Account</h2>
+                <p>Join SkinGenie to get personalized recommendations</p>
+                <form class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="skinType">Skin Type</label>
+                        <div class="input-group">
+                            <i class="fas fa-spa"></i>
+                            <select id="skinType" required>
+                                <option value="">Select your skin type</option>
+                                <option value="oily">Oily</option>
+                                <option value="dry">Dry</option>
+                                <option value="combination">Combination</option>
+                                <option value="normal">Normal</option>
+                                <option value="sensitive">Sensitive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="skinTone">Skin Tone</label>
+                        <div class="input-group">
+                            <i class="fas fa-palette"></i>
+                            <select id="skinTone" required>
+                                <option value="">Select your skin tone</option>
+                                <option value="fair">Fair</option>
+                                <option value="light">Light</option>
+                                <option value="medium">Medium</option>
+                                <option value="olive">Olive</option>
+                                <option value="brown">Brown</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="terms">
+                            <input type="checkbox" id="terms" required>
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-login">
+                    <button class="btn-social btn-google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <p class="auth-switch">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SkinGenie</h3>
+                <p>Your personal makeup recommendation system.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                    <li><a href="{{ url_for('main.index') }}#features">Features</a></li>
+                    <li><a href="{{ url_for('main.index') }}#how-it-works">How It Works</a></li>
+                    <li><a href="{{ url_for('main.index') }}#products">Products</a></li>
+                    <li><a href="{{ url_for('main.index') }}#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SkinGenie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Password Toggle
+        const togglePassword = document.querySelectorAll('.toggle-password');
+        const passwordInputs = document.querySelectorAll('input[type="password"]');
+
+        togglePassword.forEach((toggle, index) => {
+            toggle.addEventListener('click', () => {
+                const type = passwordInputs[index].getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInputs[index].setAttribute('type', type);
+                toggle.classList.toggle('fa-eye');
+                toggle.classList.toggle('fa-eye-slash');
+            });
+        });
+
+        // Form Validation
+        const registerForm = document.getElementById('registerForm');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (password.value !== confirmPassword.value) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            const submitButton = registerForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Creating Account...';
+            submitButton.disabled = true;
+            
+            // Simulate registration process
+            setTimeout(() => {
+                submitButton.textContent = 'Success!';
+                submitButton.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - SkinGenie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('main.index') }}"><h1>SkinGenie</h1></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.index') }}#products">Products</a></li>
+                <li><a href="{{ url_for('dashboard.wishlist') }}" class="active"><i class="fas fa-heart"></i> Wishlist <span class="wishlist-count">0</span></a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                <li><a href="{{ url_for('dashboard.view') }}"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section">
+        <div class="wishlist-container">
+            <h2>My Wishlist</h2>
+            <div class="wishlist-grid">
+                <!-- Wishlist items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SkinGenie</h3>
+                <p>Your personal makeup recommendation system.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                    <li><a href="{{ url_for('main.index') }}#products">Products</a></li>
+                    <li><a href="{{ url_for('dashboard.wishlist') }}">Wishlist</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="{{ url_for('dashboard.view') }}">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SkinGenie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/products.js') }}"></script>
+    <script>
+        // Wishlist functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistGrid = document.querySelector('.wishlist-grid');
+
+            function updateWishlist() {
+                wishlistGrid.innerHTML = '';
+
+                if (wishlistItems.length === 0) {
+                    wishlistGrid.innerHTML = `
+                        <div class="empty-wishlist">
+                            <i class="fas fa-heart"></i>
+                            <p>Your wishlist is empty</p>
+                            <a href="{{ url_for('main.index') }}#products" class="btn-primary">Browse Products</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                wishlistItems.forEach((item, index) => {
+                    wishlistGrid.innerHTML += `
+                        <div class="wishlist-item">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="item-details">
+                                <h4>${item.name}</h4>
+                                <p>${item.description}</p>
+                                <p class="item-price">$${item.price.toFixed(2)}</p>
+                                <div class="item-actions">
+                                    <button class="btn-primary add-to-cart" onclick="addToCart(${index})">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <button class="remove-from-wishlist" onclick="removeFromWishlist(${index})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            window.addToCart = (index) => {
+                const item = wishlistItems[index];
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                // Check if item already exists in cart
+                const existingItem = cart.find(cartItem => cartItem.id === item.id);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ ...item, quantity: 1 });
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Item added to cart!');
+            };
+
+            window.removeFromWishlist = (index) => {
+                wishlistItems.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+                updateWishlist();
+            };
+
+            updateWishlist();
+        });
+    </script>
+</body>
+</html> 
