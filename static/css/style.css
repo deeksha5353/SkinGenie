@@ -1,0 +1,1178 @@
+:root {
+    --primary-color: #FF69B4;
+    --secondary-color: #FFC0CB;
+    --text-color: #333;
+    --light-bg: #FFF5F7;
+    --dark-bg: #2C3E50;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Enhanced Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.7rem 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+.navbar-brand:hover .logo-img {
+    transform: rotate(5deg);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-color) !important;
+    padding: 0.5rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--light-bg);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    background-image: none !important;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: 8px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 11px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 11px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        padding: 0.8rem 1.5rem !important;
+        margin: 0.2rem 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--dark-bg);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-image-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hero-img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.hero-img.main-img {
+    width: 100%;
+    height: auto;
+    transform: rotate(-5deg);
+    animation: scaleIn 1s ease-out 0.4s both;
+}
+
+.hero-img.tools-img {
+    position: absolute;
+    width: 60%;
+    right: -20px;
+    bottom: -20px;
+    transform: rotate(5deg);
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Featured Looks Section */
+.featured-looks {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+}
+
+.look-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    animation: scaleIn 0.8s ease-out both;
+}
+
+.look-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.look-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.look-card:hover .look-img {
+    transform: scale(1.1);
+}
+
+.look-card h3 {
+    padding: 20px 20px 10px;
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--dark-bg);
+}
+
+.look-card p {
+    padding: 0 20px 20px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Enhanced Testimonial Cards */
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(255, 20, 147, 0.2);
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 20, 147, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 20, 147, 0.05), transparent);
+    pointer-events: none;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.3);
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.testimonial-card p::before {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(255, 192, 203, 0.3);
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    font-family: serif;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.testimonial-author::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1rem;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+.testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.wave-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Enhanced Footer Styles */
+.footer {
+    background-color: var(--dark-bg);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 80px 0 40px;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer h4 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer h5 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.footer p {
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-link i {
+    font-size: 1.5rem;
+    width: 30px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.social-link:hover i {
+    transform: scale(1.1);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--primary-color);
+}
+
+.newsletter-form .input-group {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.newsletter-form .form-control {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.newsletter-form .btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 767.98px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+    
+    .footer-bottom-links {
+        justify-content: flex-start;
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .social-link span {
+        display: none;
+    }
+    
+    .social-link i {
+        font-size: 1.8rem;
+    }
+}
+
+/* Quiz Form Styles */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: scaleIn 0.8s ease-out both;
+}
+
+.quiz-form {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--dark-bg);
+}
+
+.form-select {
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+
+.form-select:hover {
+    transform: translateX(5px);
+}
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    border-color: var(--secondary-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:hover {
+    transform: translateX(5px);
+}
+
+.form-check-label {
+    color: var(--text-color);
+    padding-left: 0.5rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+.h4 {
+    color: var(--dark-bg);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Section spacing */
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-img.tools-img {
+        width: 50%;
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .look-img {
+        height: 200px;
+    }
+
+    .testimonial-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .quiz-container {
+        padding: 0 15px;
+    }
+    
+    .form-check-label {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-card p {
+        font-size: 1rem;
+    }
+    
+    .testimonial-author {
+        font-size: 1rem;
+    }
+}
+
+/* Login Page Styles */
+.login-section {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+}
+
+.login-card {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.login-image {
+    position: relative;
+}
+
+.login-form-section {
+    background: #fff;
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .login-section {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* FAQ Section Styles */
+#faq {
+    background-color: var(--light-bg);
+}
+
+#faq .fa-question-circle {
+    background: linear-gradient(45deg, #FF69B4, #FF1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 6px rgba(255, 20, 147, 0.3));
+    transition: all 0.3s ease;
+    font-size: 3.5rem;
+}
+
+#faq .fa-question-circle:hover {
+    transform: rotate(15deg) scale(1.1);
+    filter: drop-shadow(0 6px 8px rgba(255, 20, 147, 0.4));
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 10px !important;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.accordion-button {
+    font-weight: 600;
+    padding: 1.2rem;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background-color: white;
+    box-shadow: none;
+    transform: scale(1.02);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.accordion-button::after {
+    background-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg);
+}
+
+.accordion-body {
+    padding: 1.2rem;
+    background-color: white;
+    line-height: 1.6;
+}
+
+/* Add smooth transition for accordion items */
+.accordion-collapse {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-body {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Signup Page Styles */
+.signup-section {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    padding-top: 76px;
+    background-color: var(--light-bg);
+}
+
+.signup-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1) !important;
+    border: none;
+}
+
+.signup-card .fa-user-plus {
+    color: var(--primary-color);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.signup-card h2 {
+    color: var(--dark-bg);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.signup-card .form-control {
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.signup-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+
+.signup-card .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.signup-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup-card a:hover {
+    color: darken(var(--primary-color), 10%);
+    text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+    .signup-section {
+        min-height: auto;
+        padding-top: calc(76px + 2rem);
+        padding-bottom: 2rem;
+    }
+    
+    .signup-card {
+        margin: 0 1rem;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hero Section Animations */
+.hero .btn-primary {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-img.main-img {
+    animation: scaleIn 1s ease-out 0.4s both;
+}
+
+.hero-img.tools-img {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Featured Looks Animations */
+.look-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.look-card img {
+    transition: all 0.5s ease;
+}
+
+.look-card:hover img {
+    transform: scale(1.1);
+}
+
+/* How It Works Animations */
+.step-card {
+    animation: fadeInUp 0.8s ease-out both;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-card i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Quiz Section Animations */
+.form-select, .form-control {
+    transition: all 0.3s ease;
+}
+
+.form-select:hover, .form-control:hover {
+    transform: translateX(5px);
+}
+
+/* Testimonial Animations */
+.testimonial-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Button Animations */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* FAQ Animations */
+.accordion-button {
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    transform: scale(1.02);
+}
+
+/* Form Animations */
+.form-control:focus {
+    transform: translateX(5px);
+}
+
+.form-check-input {
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+    animation: pulse 0.3s ease-out;
+}
+
+/* Apply animation delays to stagger animations */
+.step-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.step-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.look-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.look-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Add smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Feedback Modal Styles */
+#feedbackModal .modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#feedbackModal .modal-header {
+    background-color: var(--light-bg);
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+}
+
+#feedbackModal .modal-title {
+    font-weight: 600;
+    color: var(--dark-bg);
+    display: flex;
+    align-items: center;
+}
+
+#feedbackModal .modal-title i {
+    font-size: 1.4rem;
+    color: #FF69B4;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+#feedbackModal .modal-title i:hover {
+    color: #FF1493;
+    transform: scale(1.1);
+}
+
+#feedbackModal .modal-body {
+    padding: 1.5rem;
+}
+
+#feedbackModal .form-label {
+    font-weight: 500;
+    color: var(--dark-bg);
+}
+
+#feedbackModal .form-control,
+#feedbackModal .form-select {
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+#feedbackModal .form-control:focus,
+#feedbackModal .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+
+#feedbackModal textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#feedbackModal .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#feedbackModal .modal-footer {
+    padding: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: 0 0 15px 15px;
+}
+
+#feedbackModal .btn-secondary {
+    background-color: #e9ecef;
+    border: none;
+    color: var(--dark-bg);
+    font-weight: 500;
+}
+
+#feedbackModal .btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+#feedbackModal .btn {
+    padding: 8px 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#feedbackModal .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Modal Animation */
+.modal.fade .modal-dialog {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+@media (max-width: 576px) {
+    #feedbackModal .modal-dialog {
+        margin: 1rem;
+    }
+    
+    #feedbackModal .modal-header,
+    #feedbackModal .modal-body,
+    #feedbackModal .modal-footer {
+        padding: 1rem;
+    }
+}
+
+/* Feedback Icon Styles */
+.nav-link i.fa-comment-dots {
+    color: #FF69B4;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover i.fa-comment-dots {
+    color: #FF1493;
+    transform: scale(1.1);
+} 

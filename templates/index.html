@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinGenie - Your Personal Beauty Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="SkinGenie Logo" class="logo-img">
+                <span>SkinGenie</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz" id="start">Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                            <i class="fas fa-comment-dots me-1"></i>Feedback
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="feedbackModalLabel">
+                        <i class="fas fa-comment-dots text-primary me-2"></i>
+                        Share Your Feedback
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="feedbackName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="feedbackName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="feedbackEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackType" class="form-label">Feedback Type</label>
+                            <select class="form-select" id="feedbackType" required>
+                                <option value="">Select type...</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="issue">Report an Issue</option>
+                                <option value="appreciation">Appreciation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="feedbackMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="feedbackConsent">
+                            <label class="form-check-label" for="feedbackConsent">
+                                I agree to be contacted regarding my feedback
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="feedbackForm" class="btn btn-primary">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>The right makeup starts with your skin</h1>
+                    <p class="lead">Discover personalized beauty recommendations that work for you, regardless of gender or skin type.</p>
+                    <button id="findMatchBtn" class="btn btn-primary btn-lg">Find Your Match</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-grid">
+                        <img src="{{ url_for('static', filename='images/artistic-portrait.jpg') }}" alt="Artistic Portrait" class="hero-img main-img">
+                        <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="Makeup Tools" class="hero-img tools-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Looks -->
+    <section class="featured-looks py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="look-card">
+                        <img src="{{ url_for('static', filename='images/closeup-eye.jpg') }}" alt="Detailed Makeup" class="look-img">
+                        <h3>Perfect Detail</h3>
+                        <p>Discover products that enhance your natural beauty</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="look-card">
+                        <img src="{{ url_for('static', filename='images/spring-portrait.jpg') }}" alt="Spring Look" class="look-img">
+                        <h3>Express Yourself</h3>
+                        <p>Find products that match your unique style</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="look-card">
+                        <img src="{{ url_for('static', filename='images/diverse-beauty.jpg') }}" alt="Diverse Beauty" class="look-img">
+                        <h3>Inclusive Beauty</h3>
+                        <p>Products that work for everyone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">How SkinGenie Works</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <i class="fas fa-user-circle fa-3x mb-4 text-primary"></i>
+                        <h3>Share Your Profile</h3>
+                        <p>Tell us about your skin type, concerns, and preferences</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <i class="fas fa-magic fa-3x mb-4 text-primary"></i>
+                        <h3>Get Matched</h3>
+                        <p>Our algorithm finds products perfect for your needs</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <i class="fas fa-heart fa-3x mb-4 text-primary"></i>
+                        <h3>Feel Confident</h3>
+                        <p>Discover products that make you feel amazing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="py-5 bg-light" style="display: none;">
+        <div class="container">
+            <h2 class="text-center mb-4">Let's Find Your Perfect Products</h2>
+            <div class="quiz-container">
+                <div id="quiz-form" class="card p-4">
+                    <form class="needs-validation" novalidate>
+                        <!-- Skin Basics -->
+                        <div class="mb-4">
+                            <h3 class="h4 mb-3">Skin Basics</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Skin Type</label>
+                                    <select class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option>Dry</option>
+                                        <option>Oily</option>
+                                        <option>Combination</option>
+                                        <option>Normal</option>
+                                        <option>Sensitive</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Skin Tone</label>
+                                    <select class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option>Fair</option>
+                                        <option>Light</option>
+                                        <option>Medium</option>
+                                        <option>Tan</option>
+                                        <option>Deep</option>
+                                        <option>Rich</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skin Concerns -->
+                        <div class="mb-4">
+                            <h3 class="h4 mb-3">Skin Concerns</h3>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="acne">
+                                        <label class="form-check-label" for="acne">Acne/Blemishes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="aging">
+                                        <label class="form-check-label" for="aging">Fine Lines/Wrinkles</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="dark-spots">
+                                        <label class="form-check-label" for="dark-spots">Dark Spots/Hyperpigmentation</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="pores">
+                                        <label class="form-check-label" for="pores">Large Pores</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="redness">
+                                        <label class="form-check-label" for="redness">Redness/Inflammation</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Types -->
+                        <div class="mb-4">
+                            <h3 class="h4 mb-3">Products You're Interested In</h3>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="foundation">
+                                        <label class="form-check-label" for="foundation">Foundation</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="concealer">
+                                        <label class="form-check-label" for="concealer">Concealer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="blush">
+                                        <label class="form-check-label" for="blush">Blush/Bronzer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="eye-products">
+                                        <label class="form-check-label" for="eye-products">Eye Products</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="lip-products">
+                                        <label class="form-check-label" for="lip-products">Lip Products</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="skincare">
+                                        <label class="form-check-label" for="skincare">Skincare Products</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Preferences -->
+                        <div class="mb-4">
+                            <h3 class="h4 mb-3">Additional Preferences</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Price Range</label>
+                                    <select class="form-select">
+                                        <option value="">Choose...</option>
+                                        <option>Budget-Friendly</option>
+                                        <option>Mid-Range</option>
+                                        <option>Luxury</option>
+                                        <option>Mix of Ranges</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="cruelty-free">
+                                        <label class="form-check-label" for="cruelty-free">Cruelty-Free Products Only</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="vegan">
+                                        <label class="form-check-label" for="vegan">Vegan Products Only</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="fragrance-free">
+                                        <label class="form-check-label" for="fragrance-free">Fragrance-Free Products</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">Get My Recommendations</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What People Are Saying</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"Finally found products that work for my sensitive skin!"</p>
+                        <div class="testimonial-author">- Priya Sharma</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"The recommendations were spot-on. Saved me so much time!"</p>
+                        <div class="testimonial-author">- Arjun Patel</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"Love how inclusive and welcoming this platform is!"</p>
+                        <div class="testimonial-author">- Meera Kapoor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                <h2>Frequently Asked Questions</h2>
+                <p class="lead">Got questions? We've got answers!</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- Question 1 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How does SkinGenie make product recommendations?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    SkinGenie uses a sophisticated algorithm that considers multiple factors including your skin type, concerns, tone, and preferences. We analyze thousands of products and their ingredients to find the perfect matches for your unique needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How do you ensure the products are safe for sensitive skin?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We carefully analyze product ingredients and formulations. For sensitive skin, we prioritize products that are free from common irritants like fragrances, alcohol, and harsh chemicals. Our recommendations also consider your specific sensitivities and allergies that you can specify in your profile.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Can I update my skin profile later?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! You can update your skin profile anytime. As your skin changes with seasons or over time, you can adjust your preferences and concerns to receive updated recommendations that match your current needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What if I'm not satisfied with the recommended products?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We're committed to helping you find the perfect products. If you're not satisfied with your recommendations, you can provide feedback and our system will learn from your preferences to provide better matches in the future.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Is my personal information secure?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We take your privacy seriously. Your personal information is encrypted and securely stored. We never share your data with third parties without your explicit consent.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <h3 class="mb-4">SkinGenie</h3>
+                        <p class="mb-3">Your personal beauty guide helping you discover the perfect products for your unique skin.</p>
+                        <div class="social-links mb-4">
+                            <a href="#" class="social-link" title="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>@skingenie_beauty</span>
+                            </a>
+                            <a href="#" class="social-link" title="Follow us on Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>@SkinGenie</span>
+                            </a>
+                            <a href="#" class="social-link" title="Like us on Facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>SkinGenieOfficial</span>
+                            </a>
+                            <a href="#" class="social-link" title="Follow us on TikTok">
+                                <i class="fab fa-tiktok"></i>
+                                <span>@skingenie</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <h4 class="mb-4">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#testimonials">Success Stories</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/signup">Create Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <h4 class="mb-4">Contact & Support</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:support@skingenie.com">support@skingenie.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Available 24/7 for support</span>
+                            </li>
+                        </ul>
+                        <div class="newsletter mt-4">
+                            <h5 class="mb-3">Stay Updated</h5>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-md-0">&copy; 2024 SkinGenie. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
