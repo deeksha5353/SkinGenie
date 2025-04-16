@@ -1,2 +1,0 @@
-# SkinGenie
-Makeup recommendation Engine
