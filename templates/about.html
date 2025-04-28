@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SkinGenie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="SkinGenie Logo" class="logo-img">
+                SkinGenie
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                            <i class="fas fa-comment-dots"></i> Feedback
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="feedbackModalLabel">
+                        <i class="fas fa-comment-dots text-primary me-2"></i>
+                        Share Your Feedback
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="feedbackName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="feedbackName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="feedbackEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackType" class="form-label">Feedback Type</label>
+                            <select class="form-select" id="feedbackType" required>
+                                <option value="">Select type...</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="issue">Report an Issue</option>
+                                <option value="appreciation">Appreciation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="feedbackMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="feedbackConsent">
+                            <label class="form-check-label" for="feedbackConsent">
+                                I agree to be contacted regarding my feedback
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="feedbackForm" class="btn btn-primary">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">About SkinGenie</h1>
+                    <p class="lead mb-4">Your Personal Beauty Companion</p>
+                    <p class="mb-4">SkinGenie was born from a simple idea: to make finding the perfect makeup products easier and more personalized than ever before. We understand that everyone's skin is unique, and finding the right products can be overwhelming.</p>
+                    <p class="mb-4">Our mission is to simplify your beauty journey by providing personalized recommendations based on your unique skin type, concerns, and preferences.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image-container" style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <img src="{{ url_for('static', filename='images/natural-beauty.jpg') }}" alt="Natural Beauty" 
+                            class="img-fluid" 
+                            style="width: 100%; height: 500px; object-fit: cover; transform: scale(1.02); transition: transform 0.3s ease;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Story</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="story-card p-4 text-center">
+                        <i class="fas fa-lightbulb fa-3x mb-3 text-primary"></i>
+                        <h3>The Idea</h3>
+                        <p>Founded in 2025, SkinGenie started as a passion project by a group of College Students to help people find their perfect makeup match.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="story-card p-4 text-center">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h3>The Team</h3>
+                        <p>Our team of beauty enthusiasts and tech experts work together to create the best experience for you.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="story-card p-4 text-center">
+                        <i class="fas fa-star fa-3x mb-3 text-primary"></i>
+                        <h3>The Future</h3>
+                        <p>We're constantly innovating to bring you the latest in beauty technology and personalized recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Values</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="value-card p-4">
+                        <h3><i class="fas fa-heart text-primary me-2"></i>Personalization</h3>
+                        <p>We believe in providing tailored recommendations that suit your unique needs and preferences.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="value-card p-4">
+                        <h3><i class="fas fa-hand-holding-heart text-primary me-2"></i>Inclusivity</h3>
+                        <p>Beauty comes in all shapes, sizes, and colors. We celebrate diversity in all its forms.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="value-card p-4">
+                        <h3><i class="fas fa-shield-alt text-primary me-2"></i>Transparency</h3>
+                        <p>We're committed to being open and honest about our recommendations and processes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="value-card p-4">
+                        <h3><i class="fas fa-leaf text-primary me-2"></i>Sustainability</h3>
+                        <p>We promote eco-friendly and cruelty-free beauty products whenever possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SkinGenie</h5>
+                    <p>Your personal beauty companion for finding the perfect makeup products.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback! We will review it shortly.');
+            this.reset();
+            var modal = bootstrap.Modal.getInstance(document.getElementById('feedbackModal'));
+            modal.hide();
+        });
+    </script>
+</body>
+</html> 
