@@ -3,14 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkinGenie - Find Your Perfect Match</title>
+    <title>SkinGenie - Find Your Match</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            padding-top: 76px; /* Height of the fixed navbar */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: #333;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        .navbar-brand span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .survey-section {
+            min-height: calc(100vh - 76px);
+            background-color: #f8f9fa;
+        }
+        .pink-text {
+            color: #ff69b4;
+        }
+        .btn-pink {
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            color: white;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .btn-pink:hover {
+            background-color: #ff1493;
+            border-color: #ff1493;
+            color: white;
+        }
+        .vibrant-text {
+            color: #ff69b4;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .vibrant-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            border-radius: 3px;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .form-select, .form-control {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+        .form-check-label {
+            font-weight: 300;
+        }
+        .footer-section h3, .footer-section h4 {
+            font-weight: 600;
+        }
+        .footer-links a, .footer-contact a, .footer-bottom-links a {
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="SkinGenie Logo" class="logo-img">
@@ -28,10 +107,7 @@
                         <a class="nav-link" href="/#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
+                        <a class="nav-link" href="/#faq">FAQs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
@@ -46,132 +122,186 @@
         </div>
     </nav>
 
-    <!-- Survey Section -->
-    <section class="survey-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title text-center mb-4">Makeup Recommendations</h2>
-                            <form id="recommendation-form">
-                                <!--Age Rnge-->
-                                <div class="mb-4">
-                                    <label for="age_range" class="form-label">Select Age Range</label>
-                                    <select name="age_range" id="age_range" class="form-select" required>
-                                        <option value="">Select...</option>
-                                        {% for age in age_ranges %}
-                                            <option value="{{ age }}">{{ age }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
-                                <!--Skin Type-->
-                                <div class="mb-4">
-                                    <label for="skin_type" class="form-label">Select Skin Type</label>
-                                    <select name="skin_type" id="skin_type" class="form-select" required>
-                                        <option value="">Select...</option>
-                                        {% for type in skin_types %}
-                                            <option value="{{ type }}">{{ type }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
-                                <!--Experience Level-->
-                                <div class="mb-4">
-                                    <label for="experience_level" class="form-label">Select Makeup Experience Level</label>
-                                    <select name="experience_level" id="experience_level" class="form-select" required>
-                                        <option value="">Select...</option>
-                                        {% for level in experience_levels %}
-                                            <option value="{{ level }}">{{ level }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
-                                <!--Coverage-->
-                                <div class="mb-4">
-                                    <label for="coverage" class="form-label">Select Makeup Coverage</label>
-                                    <select name="coverage" id="coverage" class="form-select" required>
-                                        <option value="">Select...</option>
-                                        {% for coverage in coverage_types %}
-                                            <option value="{{ coverage }}">{{ coverage }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
-                                <!--Budget-->
-                                <div class="mb-4">
-                                    <label for="max_budget" class="form-label">Maximum Price per Product (in Rupees ₹)</label>
-                                    <input type="number" name="max_budget" id="max_budget" class="form-control" min="0" max="1000" placeholder="Enter amount in ₹" required>
-                                </div>
-
-                                <!--Skin Tone-->
-                                <div class="mb-4">
-                                    <label class="form-label">Select Skin Tone</label>
-                                    <div class="row">
-                                        {% for tone, image in skin_tones_options.items() %}
-                                        <div class="col-md-4 skin-tone-option">
-                                            <div class="form-check">
-                                                <img src="{{ url_for('static', filename=image) }}" alt="{{ tone }} skin tone" class="skin-tone-image">
-                                                <input class="form-check-input" type="radio" name="skin_tone" id="skin_tone_{{ tone }}" value="{{ tone }}" required>
-                                                <label class="form-check-label" for="skin_tone_{{ tone }}">{{ tone }}</label>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <!--Skin Conditions-->
-                                <div class="mb-4">
-                                    <label class="form-label">Select Skin Conditions(Optional)</label>
-                                    <div class="row">
-                                        {% for condition in skin_conditions.keys() %}
-                                        <div class="col-md-4 condition-option text-center mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="conditions[]" id="condition_{{ condition }}" value="{{ condition }}">
-                                                <label class="form-check-label" for="condition_{{ condition }}">{{ condition }}</label>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <!--Lifestyle-->
-                                <div class="mb-4">
-                                    <label class="form-label">What is your Occupation?(You can select Multiple)</label>
-                                    <div class="row">
-                                        {% for option in lifestyle_options %}
-                                        <div class="col-md-6 mb-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="lifestyle[]" id="lifestyle_{{ option }}" value="{{ option }}">
-                                                <label class="form-check-label" for="lifestyle_{{ option }}">{{ option }}</label>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <!--Activity Level-->
-                                <div class="mb-4">
-                                    <label for="activity_level" class="form-label">How Active/Busy are You?</label>
-                                    <select name="activity_level" id="activity_level" class="form-select" required>
-                                        <option value="">Select...</option>
-                                        {% for level in busy_levels %}
-                                            <option value="{{ level }}">{{ level }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary" id="submitBtn">Get Recommendations</button>
-                                </div>
-
-                            </form>
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="feedbackModalLabel">
+                        <i class="fas fa-comment-dots text-primary me-2"></i>
+                        Share Your Feedback
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="feedbackName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="feedbackName" required>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="feedbackEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="feedbackEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackType" class="form-label">Feedback Type</label>
+                            <select class="form-select" id="feedbackType" required>
+                                <option value="">Select type...</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="issue">Report an Issue</option>
+                                <option value="appreciation">Appreciation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="feedbackMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="feedbackConsent">
+                            <label class="form-check-label" for="feedbackConsent">
+                                I agree to be contacted regarding my feedback
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="feedbackForm" class="btn btn-primary">Submit Feedback</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Survey Section -->
+    <section class="survey-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="survey-card card shadow-lg">
+              <div class="card-body p-4">
+                <h2 class="text-center mb-4 pink-text">Find Your Perfect Match</h2>
+                <p class="text-center mb-4 vibrant-text">Answer a few questions to get personalized beauty recommendations</p>
+                <form id="survey-form" action="/recommend" method="POST" data-ajax="false">
+                    <!-- Age Range -->
+                    <div class="mb-4">
+                        <label for="age_range" class="form-label">What's your age range?</label>
+                        <select class="form-select" id="age_range" name="age_range" required>
+                            <option value="">Select your age range</option>
+                            {% for age in age_ranges %}
+                            <option value="{{ age }}">{{ age }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Skin Type -->
+                    <div class="mb-4">
+                        <label for="skin_type" class="form-label">What's your skin type?</label>
+                        <select class="form-select" id="skin_type" name="skin_type" required>
+                            <option value="">Select your skin type</option>
+                            {% for type in skin_types %}
+                            <option value="{{ type }}">{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Skin Tone -->
+                    <div class="mb-4">
+                        <label for="skin_tone" class="form-label">What's your skin tone?</label>
+                        <div class="skin-tone-options">
+                            {% for tone, image in skin_tone_options.items() %}
+                            <div class="skin-tone-option">
+                                <input type="radio" id="tone_{{ tone }}" name="skin_tone" value="{{ tone }}" required>
+                                <label for="tone_{{ tone }}">
+                                    <img src="{{ url_for('static', filename='images/skin-tones/' + image) }}" alt="{{ tone }} skin tone">
+                                    <span>{{ tone }}</span>
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Coverage Preference -->
+                    <div class="mb-4">
+                        <label for="coverage" class="form-label">What coverage level do you prefer?</label>
+                        <select class="form-select" id="coverage" name="coverage" required>
+                            <option value="">Select coverage level</option>
+                            {% for type in coverage_types %}
+                            <option value="{{ type }}">{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Experience Level -->
+                    <div class="mb-4">
+                        <label for="experience_level" class="form-label">What's your makeup experience level?</label>
+                        <select class="form-select" id="experience_level" name="experience_level" required>
+                            <option value="">Select experience level</option>
+                            {% for level in experience_levels %}
+                            <option value="{{ level }}">{{ level }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Activity Level -->
+                    <div class="mb-4">
+                        <label for="activity_level" class="form-label">How active is your lifestyle?</label>
+                        <select class="form-select" id="activity_level" name="activity_level" required>
+                            <option value="">Select activity level</option>
+                            {% for level in busy_levels %}
+                            <option value="{{ level }}">{{ level }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Lifestyle -->
+                    <div class="mb-4">
+                        <label class="form-label">Which of these describe your lifestyle? (Select all that apply)</label>
+                        <div class="form-check">
+                            {% for option in lifestyle_options %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="lifestyle" value="{{ option }}" id="lifestyle_{{ loop.index }}">
+                                <label class="form-check-label" for="lifestyle_{{ loop.index }}">
+                                    {{ option }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Skin Conditions -->
+                    <div class="mb-4">
+                        <label class="form-label">Do you have any of these skin conditions? (Select all that apply)</label>
+                        <div class="form-check">
+                            {% for condition, image in skin_conditions.items() %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="conditions" value="{{ condition }}" id="condition_{{ loop.index }}">
+                                <label class="form-check-label" for="condition_{{ loop.index }}">
+                                    {{ condition }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Budget -->
+                    <div class="mb-4">
+                        <label for="max_budget" class="form-label">What's your maximum budget for a single product?</label>
+                        <div class="input-group">
+                            <span class="input-group-text">₹</span>
+                            <input type="number" class="form-control" id="max_budget" name="max_budget" min="0" max="2000" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-pink btn-lg">Find My Matches</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->

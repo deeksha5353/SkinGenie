@@ -4,13 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkinGenie - Your Personal Beauty Guide</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: #333;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        .navbar-brand span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .section-scroll {
+            scroll-margin-top: 100px;
+            padding-top: 20px; /* Add some padding to prevent content from being too close to navbar */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+        .btn {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        /* Add smooth transition for all scrollable elements */
+        [id] {
+            scroll-margin-top: 100px;
+            transition: all 0.3s ease;
+        }
+        /* Hero section */
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+        .hero .lead {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        /* Featured looks */
+        .look-card h3 {
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .look-card p {
+            font-weight: 300;
+        }
+        /* Steps */
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        /* Testimonials */
+        .testimonial-card .quote {
+            font-style: italic;
+            font-weight: 300;
+        }
+        .testimonial-name {
+            font-weight: 500;
+        }
+        /* FAQ */
+        .accordion-button {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        .accordion-body {
+            font-weight: 300;
+        }
+        /* Footer */
+        .footer-section h3, .footer-section h4 {
+            font-weight: 600;
+        }
+        .footer-links a, .footer-contact a, .footer-bottom-links a {
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="SkinGenie Logo" class="logo-img">
@@ -22,13 +110,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                        <a class="nav-link" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#quiz" id="start">Get Started</a>
+                        <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
@@ -37,6 +125,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3" href="/survey">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +140,7 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title" id="feedbackModalLabel">
-                        <i class="fas fa-comment-dots text-primary me-2"></i>
+                        <i class="fas fa-comment-dots pink-icon me-2"></i>
                         Share Your Feedback
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -101,7 +192,7 @@
                 <div class="col-lg-6">
                     <h1>The right makeup starts with your skin</h1>
                     <p class="lead">Discover personalized beauty recommendations that work for you, regardless of gender or skin type.</p>
-                    <button id="findMatchBtn" class="btn btn-primary btn-lg">Find Your Match</button>
+                    <a href="/survey" class="btn btn-primary btn-lg">Find Your Match</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-grid">
@@ -143,7 +234,7 @@
     </section>
 
     <!-- How It Works -->
-    <section id="how-it-works" class="py-5">
+    <section id="how-it-works" class="py-5 section-scroll">
         <div class="container">
             <h2 class="text-center mb-5">How SkinGenie Works</h2>
             <div class="row">
@@ -172,147 +263,8 @@
         </div>
     </section>
 
-    <!-- Quiz Section -->
-    <section id="quiz" class="py-5 bg-light" style="display: none;">
-        <div class="container">
-            <h2 class="text-center mb-4">Let's Find Your Perfect Products</h2>
-            <div class="quiz-container">
-                <div id="quiz-form" class="card p-4">
-                    <form class="needs-validation" novalidate>
-                        <!-- Skin Basics -->
-                        <div class="mb-4">
-                            <h3 class="h4 mb-3">Skin Basics</h3>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Skin Type</label>
-                                    <select class="form-select" required>
-                                        <option value="">Choose...</option>
-                                        <option>Dry</option>
-                                        <option>Oily</option>
-                                        <option>Combination</option>
-                                        <option>Normal</option>
-                                        <option>Sensitive</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Skin Tone</label>
-                                    <select class="form-select" required>
-                                        <option value="">Choose...</option>
-                                        <option>Fair</option>
-                                        <option>Light</option>
-                                        <option>Medium</option>
-                                        <option>Tan</option>
-                                        <option>Deep</option>
-                                        <option>Rich</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Skin Concerns -->
-                        <div class="mb-4">
-                            <h3 class="h4 mb-3">Skin Concerns</h3>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="acne">
-                                        <label class="form-check-label" for="acne">Acne/Blemishes</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="aging">
-                                        <label class="form-check-label" for="aging">Fine Lines/Wrinkles</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="dark-spots">
-                                        <label class="form-check-label" for="dark-spots">Dark Spots/Hyperpigmentation</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="pores">
-                                        <label class="form-check-label" for="pores">Large Pores</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="redness">
-                                        <label class="form-check-label" for="redness">Redness/Inflammation</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product Types -->
-                        <div class="mb-4">
-                            <h3 class="h4 mb-3">Products You're Interested In</h3>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="foundation">
-                                        <label class="form-check-label" for="foundation">Foundation</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="concealer">
-                                        <label class="form-check-label" for="concealer">Concealer</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="blush">
-                                        <label class="form-check-label" for="blush">Blush/Bronzer</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="eye-products">
-                                        <label class="form-check-label" for="eye-products">Eye Products</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="lip-products">
-                                        <label class="form-check-label" for="lip-products">Lip Products</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="skincare">
-                                        <label class="form-check-label" for="skincare">Skincare Products</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Additional Preferences -->
-                        <div class="mb-4">
-                            <h3 class="h4 mb-3">Additional Preferences</h3>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Price Range</label>
-                                    <select class="form-select">
-                                        <option value="">Choose...</option>
-                                        <option>Budget-Friendly</option>
-                                        <option>Mid-Range</option>
-                                        <option>Luxury</option>
-                                        <option>Mix of Ranges</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="cruelty-free">
-                                        <label class="form-check-label" for="cruelty-free">Cruelty-Free Products Only</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="vegan">
-                                        <label class="form-check-label" for="vegan">Vegan Products Only</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="fragrance-free">
-                                        <label class="form-check-label" for="fragrance-free">Fragrance-Free Products</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg px-5">Get My Recommendations</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials -->
-    <section id="testimonials" class="py-5">
+    <section id="testimonials" class="py-5 section-scroll">
         <div class="container">
             <h2 class="text-center mb-5">What People Are Saying</h2>
             <div class="row">
@@ -339,7 +291,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-5 bg-light">
+    <section id="faq" class="py-5 bg-light section-scroll">
         <div class="container">
             <div class="text-center mb-5">
                 <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
@@ -508,5 +460,71 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Enhanced smooth scroll implementation
+        function smoothScroll(target) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            // Easing function for smooth animation
+            function easeInOutCubic(t) {
+                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const duration = 800; // Adjust duration as needed
+                const progress = Math.min(timeElapsed / duration, 1);
+                const easeProgress = easeInOutCubic(progress);
+                
+                window.scrollTo(0, startPosition + (distance * easeProgress));
+                
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // Debounce function to prevent multiple rapid scrolls
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    debounce(smoothScroll(target), 100)();
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

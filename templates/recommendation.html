@@ -24,7 +24,7 @@
                                                                                 <td>{{ product.Category }}</td>
                                                                                 <td>{{ product['Product Name'] }}</td>
                                                                                 <td>{{ product.Price }}</td>
-                                                                                <td><a href="{{ product.URL }}" target="_blank" class="btn btn-sm btn-primary">View Product</a></td>
+                                                                                <td><a href="{{ product.URL }}" target="_blank" class="btn btn-sm btn-pink">View Product</a></td>
                                                                       </tr>
                                                                       {% endfor %}
                                                             </tbody>
@@ -35,7 +35,7 @@
                                         {% endif %}
                                         
                                         <div class="text-center mt-4">
-                                                  <a href="{{ url_for('index') }}" class="btn btn-primary">Start Over</a>
+                                                  <a href="{{ url_for('index') }}" class="btn btn-pink">Start Over</a>
                                         </div>
                                         </div>
                               </div>

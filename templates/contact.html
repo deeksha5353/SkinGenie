@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - SkinGenie</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .contact-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+        }
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        .contact-card i {
+            color: #ff69b4;
+        }
+        .accordion-button {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='images/makeup-tools.png') }}" alt="SkinGenie Logo" class="logo-img">
-                SkinGenie
+                <span>SkinGenie</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -28,12 +66,15 @@
                         <a class="nav-link" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
+                        <a class="nav-link active" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                            <i class="fas fa-comment-dots"></i> Feedback
+                            <i class="fas fa-comment-dots me-1"></i>Feedback
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-3" href="/survey">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -91,124 +132,162 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <section class="contact-section py-5 mt-5">
+    <!-- Contact Hero Section -->
+    <section class="hero contact-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Get in Touch</h1>
+                    <p class="lead">Have questions about SkinGenie? We're here to help you find the perfect beauty solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
-                    <p class="lead mb-4">We'd love to hear from you!</p>
-                    <p class="mb-4">Have questions about our services or need assistance? Fill out the form below and we'll get back to you as soon as possible.</p>
-                    
-                    <div class="contact-info mb-5">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
-                            <div>
-                                <h5>Our Location</h5>
-                                <p>Lucknow, India<br>226028</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-phone fa-2x text-primary me-3"></i>
-                            <div>
-                                <h5>Phone</h5>
-                                <p>+91 6386008987</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-envelope fa-2x text-primary me-3"></i>
-                            <div>
-                                <h5>Email</h5>
-                                <p>info@skingenie.com</p>
-                            </div>
-                        </div>
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                        <h3>Visit Us</h3>
+                        <p>123 Beauty Lane<br>Mumbai, Maharashtra 400001<br>India</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-form p-4 rounded shadow">
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                        </form>
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                        <h3>Call Us</h3>
+                        <p>Phone: +91 22 1234 5678<br>Toll Free: 1800 123 4567</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                        <h3>Email Us</h3>
+                        <p>support@skingenie.com<br>info@skingenie.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Preview Section -->
-    <section class="faq-preview py-5 bg-light">
+    <!-- Contact Form -->
+    <section class="contact-form py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="faq-item p-4">
-                        <h5>How do I get started with SkinGenie?</h5>
-                        <p>Simply click the "Get Started" button on our homepage and complete our quick survey to receive personalized recommendations.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="faq-item p-4">
-                        <h5>Is SkinGenie free to use?</h5>
-                        <p>Yes, our basic recommendation service is completely free. We may offer premium features in the future.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-5">
+                            <h2 class="text-center mb-4">Send Us a Message</h2>
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="/#faq" class="btn btn-outline-primary">View All FAQs</a>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="faq-preview py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1Collapse">
+                                    How does SkinGenie's recommendation system work?
+                                </button>
+                            </h3>
+                            <div id="faq1Collapse" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    SkinGenie uses advanced AI algorithms to analyze your skin type, concerns, and preferences. We consider factors like skin sensitivity, allergies, and your beauty goals to recommend products that are perfect for you.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2Collapse">
+                                    Are your recommendations suitable for all skin types?
+                                </button>
+                            </h3>
+                            <div id="faq2Collapse" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Our recommendations are personalized for each individual's unique skin type and concerns. We have a diverse database of products suitable for all skin types, from very dry to oily, sensitive to resilient.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="/#faq" class="btn btn-outline-primary">View All FAQs</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-4">
+    <footer class="footer py-5 bg-dark text-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>SkinGenie</h5>
-                    <p>Your personal beauty companion for finding the perfect makeup products.</p>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>About SkinGenie</h5>
+                    <p>Your personal beauty assistant powered by AI, helping you discover the perfect products for your unique skin.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Connect With Us</h5>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2024 SkinGenie. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your feedback! We will review it shortly.');
-            this.reset();
-            var modal = bootstrap.Modal.getInstance(document.getElementById('feedbackModal'));
-            modal.hide();
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html> 

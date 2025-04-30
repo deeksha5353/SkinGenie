@@ -16,12 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle form submission
-    if (quizForm) {
-        quizForm.addEventListener('submit', function(e) {
+    const surveyForm = document.getElementById('survey-form');
+    if (surveyForm) {
+        // Check if the form has a data-ajax attribute set to "true"
+        const useAjax = surveyForm.getAttribute('data-ajax') === 'true';
+        
+        surveyForm.addEventListener('submit', function(e) {
+            // If not using AJAX, just let the form submit normally
+            if (!useAjax) {
+                return true;
+            }
+            
             e.preventDefault();
             
             // Show loading state
-            const submitButton = quizForm.querySelector('button[type="submit"]');
+            const submitButton = surveyForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
             submitButton.innerHTML = `
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -30,43 +39,141 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
 
             // Collect form data
-            const formData = new FormData(quizForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                if (data[key]) {
-                    // If the key already exists, make it an array
-                    if (!Array.isArray(data[key])) {
-                        data[key] = [data[key]];
-                    }
-                    data[key].push(value);
-                } else {
-                    data[key] = value;
-                }
-            }
-
+            const formData = new FormData(surveyForm);
+            
             // Send data to backend
-            fetch('/get_recommendations', {
+            fetch('/recommend', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
-                body: JSON.stringify(data)
+                body: new URLSearchParams(formData)
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    displayRecommendations(data.recommendations);
-                } else {
-                    displayError();
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.error || 'An error occurred while processing your request');
+                    });
                 }
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                        console.error('Response text:', text);
+                        throw new Error('Invalid response from server');
+                    }
+                });
             })
-            .catch(() => {
-                displayError();
+            .then(data => {
+                if (!Array.isArray(data)) {
+                    throw new Error('Invalid response format: expected an array');
+                }
+
+                // Create recommendations container
+                const container = document.createElement('div');
+                container.className = 'container mt-4';
+                container.id = 'recommendations-container';
+                
+                // Create recommendations header
+                const header = document.createElement('h2');
+                header.className = 'text-center mb-4';
+                header.textContent = 'Your Personalized Recommendations';
+                container.appendChild(header);
+                
+                if (data.length === 0) {
+                    // Show message if no recommendations
+                    const noResults = document.createElement('div');
+                    noResults.className = 'alert alert-info';
+                    noResults.textContent = 'No recommendations found. Please try adjusting your preferences.';
+                    container.appendChild(noResults);
+                } else {
+                    // Create table for recommendations
+                    const table = document.createElement('table');
+                    table.className = 'table table-hover';
+                    
+                    // Create table header
+                    const thead = document.createElement('thead');
+                    thead.innerHTML = `
+                        <tr>
+                            <th>Category</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    `;
+                    table.appendChild(thead);
+                    
+                    // Create table body
+                    const tbody = document.createElement('tbody');
+                    data.forEach(product => {
+                        // Validate product data
+                        if (!product || typeof product !== 'object') {
+                            console.error('Invalid product data:', product);
+                            return;
+                        }
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.Category || 'N/A'}</td>
+                            <td>${product['Product Name'] || 'N/A'}</td>
+                            <td>${product.Price || 'N/A'}</td>
+                            <td>
+                                ${product.URL && product.URL !== '#' ? 
+                                    `<a href="${product.URL}" target="_blank" class="btn btn-sm btn-primary" onclick="return checkLink(event, this)">View Product</a>` :
+                                    `<span class="text-muted">Link not available</span>`
+                                }
+                            </td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                    table.appendChild(tbody);
+                    container.appendChild(table);
+                }
+                
+                // Add back button
+                const backButton = document.createElement('div');
+                backButton.className = 'text-center mt-4';
+                backButton.innerHTML = '<a href="/" class="btn btn-primary">Start Over</a>';
+                container.appendChild(backButton);
+                
+                // Replace form with recommendations
+                surveyForm.parentNode.replaceChild(container, surveyForm);
+                
+                // Scroll to the top of the recommendations
+                window.scrollTo({
+                    top: container.offsetTop - 20,
+                    behavior: 'smooth'
+                });
             })
-            .finally(() => {
-                // Reset button state
+            .catch(error => {
+                console.error('Error:', error);
                 submitButton.innerHTML = originalButtonText;
                 submitButton.disabled = false;
+                
+                // Show error message to user
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'alert alert-danger mt-3';
+                errorDiv.role = 'alert';
+                errorDiv.innerHTML = `
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    ${error.message || 'An error occurred. Please try again.'}
+                `;
+                
+                // Remove any existing error messages
+                const existingError = surveyForm.querySelector('.alert-danger');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Insert error message before the form
+                surveyForm.parentNode.insertBefore(errorDiv, surveyForm);
+                
+                // Remove the error message after 5 seconds
+                setTimeout(() => {
+                    errorDiv.remove();
+                }, 5000);
             });
         });
     }
@@ -194,4 +301,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-}); 
+});
+
+function checkLink(event, linkElement) {
+    const url = linkElement.href;
+    if (!url || url === '#' || !url.startsWith('http')) {
+        event.preventDefault();
+        alert('This product link is not available at the moment.');
+        return false;
+    }
+    return true; 
+} 
