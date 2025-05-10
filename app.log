@@ -12345,3 +12345,505 @@ werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on 
 2025-05-08 00:38:24,582 - werkzeug - WARNING -  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
 2025-05-08 00:38:24,583 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
+2025-05-08 12:46:34,607 - __main__ - INFO - Starting data loading...
+2025-05-08 12:46:34,607 - __main__ - INFO - Starting background data loading...
+2025-05-08 12:46:37,634 - __main__ - INFO - Model loaded in 3.03 seconds
+2025-05-08 12:46:37,634 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 12:46:37,923 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 12:46:37,923 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 12:46:37,941 - __main__ - INFO - Initializing category encoder...
+2025-05-08 12:46:37,943 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 12:46:37,951 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 12:46:37,955 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 12:46:37,965 - __main__ - INFO - Data loaded and preprocessed in 0.33 seconds
+2025-05-08 12:46:37,965 - __main__ - INFO - Data loading completed successfully
+2025-05-08 12:46:37,965 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 12:46:38,067 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 12:46:41,873 - __main__ - INFO - Starting data loading...
+2025-05-08 12:46:41,873 - __main__ - INFO - Starting background data loading...
+2025-05-08 12:46:43,060 - __main__ - INFO - Model loaded in 1.18 seconds
+2025-05-08 12:46:43,063 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 12:46:43,232 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 12:46:43,240 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 12:46:43,245 - __main__ - INFO - Initializing category encoder...
+2025-05-08 12:46:43,252 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 12:46:43,252 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 12:46:43,259 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 12:46:43,292 - __main__ - INFO - Data loaded and preprocessed in 0.23 seconds
+2025-05-08 12:46:43,296 - __main__ - INFO - Data loading completed successfully
+2025-05-08 12:46:43,297 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 12:46:43,352 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 12:46:43,352 - werkzeug - INFO -  * Debugger PIN: 109-119-063
+2025-05-08 12:46:43,471 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-08 12:46:43,474 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
+2025-05-08 12:47:12,026 - __main__ - INFO - Rendering index.html
+2025-05-08 12:47:12,158 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "GET / HTTP/1.1" 200 -
+2025-05-08 12:47:12,318 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,373 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,394 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,418 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,423 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,423 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,486 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:47:12,656 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:12] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:47:16,068 - __main__ - INFO - Rendering survey.html
+2025-05-08 12:47:16,166 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "GET /survey HTTP/1.1" 200 -
+2025-05-08 12:47:16,238 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,277 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,353 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,387 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/images/skin-tones/fair-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,402 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/images/skin-tones/deep-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,406 - __main__ - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-08 12:47:16,406 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[36mGET /static/images/skin-tones/medium-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:47:16,419 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 518, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\scaffold.py", line 328, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\helpers.py", line 700, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\werkzeug\utils.py", line 841, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2025-05-08 12:47:16,467 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[35m[1mGET /static/images/makeUP12.jpg HTTP/1.1[0m" 500 -
+2025-05-08 12:47:16,473 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:47:47,784 - __main__ - INFO - Starting get_product_recommendations
+2025-05-08 12:47:47,785 - __main__ - INFO - User profile: {'professional_review': 0, 'vibe_review': 0, 'redness_review': 0, 'dry_review': 1, 'light_coverage_review': 0, 'young_review': 1, 'mother_review': 0, 'skin_concerns_review': 1, 'white_review': 0, 'tan_review': 1, 'acne_review': 0, 'black_review': 0, 'comfortable_wear_review': 0.5, 'coverage_review': 0, 'medium_coverage_review': 1, 'full_coverage_review': 0, 'easy_use_review': 0, 'wrinkles_review': 0}
+2025-05-08 12:47:47,785 - __main__ - INFO - Max budget: 700.0
+2025-05-08 12:47:47,785 - __main__ - INFO - Data loaded successfully
+2025-05-08 12:47:47,785 - __main__ - INFO - Product data columns: ['product_link_id', 'overall_product_rating', 'young', 'mother', 'professional', 'vibe', 'acne', 'dry', 'wrinkles', 'black', 'white', 'tan', 'redness', 'light_coverage', 'medium_coverage', 'full_coverage', 'sheer_finish', 'glowy_finish', 'matte_finish', 'expensive', 'inexpensive', 'skin_concerns', 'comfortable_wear', 'easy_use', 'pilling', 'shade_range', 'category', 'num_shades', 'num_reviews', 'young_review', 'mother_review', 'professional_review', 'vibe_review', 'acne_review', 'dry_review', 'wrinkles_review', 'black_review', 'white_review', 'tan_review', 'redness_review', 'light_coverage_review', 'medium_coverage_review', 'full_coverage_review', 'skin_concerns_review', 'comfortable_wear_review', 'easy_use_review']
+2025-05-08 12:47:47,785 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 12:47:47,793 - __main__ - INFO - Features needed for prediction: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 12:47:47,842 - __main__ - INFO - Encoding categories. Unique categories: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 12:47:47,849 - __main__ - INFO - Category encoding successful. Encoded values: [ 7  3 12 11  0  4  2  6  5 10  1  8  9]
+2025-05-08 12:47:47,877 - __main__ - INFO - Making predictions...
+2025-05-08 12:47:48,013 - __main__ - INFO - Predictions made successfully
+2025-05-08 12:47:48,032 - __main__ - INFO - Processing URL for MegaGlo Blushlighter: https://www.ulta.com/p/megaglo-blushlighter-pimprod2013408?sku=2559287
+2025-05-08 12:47:48,032 - __main__ - INFO - Processing URL for Just Blushing Powder: https://www.ulta.com/p/just-blushing-powder-xlsImpprod15711055?sku=2505272
+2025-05-08 12:47:48,032 - __main__ - INFO - Processing URL for MegaGlo Makeup Stick Blush: https://www.ulta.com/p/megaglo-makeup-stick-blush-xlsImpprod16731045?sku=2518208
+2025-05-08 12:47:48,040 - __main__ - INFO - Processing URL for Primer-Infused Blush: https://www.ulta.com/p/primer-infused-blush-pimprod2003079?sku=2538875
+2025-05-08 12:47:48,040 - __main__ - INFO - Processing URL for Megaglo Makeup Stick: https://www.ulta.com/p/megaglo-makeup-stick-pimprod2043772?sku=2620918
+2025-05-08 12:47:48,040 - __main__ - INFO - Processing URL for Photo Focus Face Primer: https://www.ulta.com/p/photo-focus-face-primer-xlsImpprod16731067?sku=2518307
+2025-05-08 12:47:48,040 - __main__ - INFO - Processing URL for Love Struck Blusher + Bronzer: https://www.ulta.com/p/love-struck-blusher-bronzer-xlsImpprod13361015?sku=2296116
+2025-05-08 12:47:48,046 - __main__ - INFO - Processing URL for Love Struck Blusher + Bronzer: https://www.ulta.com/p/love-struck-blusher-bronzer-xlsImpprod13361015?sku=2296116
+2025-05-08 12:47:48,046 - __main__ - INFO - Generated 8 recommendations
+2025-05-08 12:47:48,048 - __main__ - INFO - get_product_recommendations took 0.26 seconds to execute
+2025-05-08 12:47:48,098 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:48] "POST /recommend HTTP/1.1" 200 -
+2025-05-08 12:47:48,153 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:47:48,157 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:48] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:47:48,174 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:47:48,512 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:47:53,225 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:47:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:49:02,533 - __main__ - INFO - Rendering index.html
+2025-05-08 12:49:02,536 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "GET / HTTP/1.1" 200 -
+2025-05-08 12:49:02,579 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:49:02,601 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:49:02,722 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:02,799 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:02,936 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:02,965 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:49:03,001 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:03] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:03,137 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:49:05,093 - __main__ - INFO - Rendering survey.html
+2025-05-08 12:49:05,101 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "GET /survey HTTP/1.1" 200 -
+2025-05-08 12:49:05,192 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,198 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,199 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/images/skin-tones/fair-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,199 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/images/skin-tones/medium-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,207 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/images/skin-tones/deep-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,223 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:49:05,231 - __main__ - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-08 12:49:05,237 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 518, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\scaffold.py", line 328, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\helpers.py", line 700, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\werkzeug\utils.py", line 841, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2025-05-08 12:49:05,255 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[35m[1mGET /static/images/makeUP12.jpg HTTP/1.1[0m" 500 -
+2025-05-08 12:49:05,305 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:49:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:52:43,026 - __main__ - INFO - Rendering index.html
+2025-05-08 12:52:43,031 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "GET / HTTP/1.1" 200 -
+2025-05-08 12:52:43,096 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,137 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,197 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,280 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,376 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,427 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,437 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:43,506 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 12:52:45,098 - __main__ - INFO - Rendering survey.html
+2025-05-08 12:52:45,104 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "GET /survey HTTP/1.1" 200 -
+2025-05-08 12:52:45,146 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,151 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,159 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/images/skin-tones/fair-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,159 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/images/skin-tones/medium-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,175 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/images/skin-tones/deep-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,175 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 12:52:45,193 - __main__ - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-08 12:52:45,202 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 518, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\scaffold.py", line 328, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\helpers.py", line 700, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\werkzeug\utils.py", line 841, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2025-05-08 12:52:45,263 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[35m[1mGET /static/images/makeUP12.jpg HTTP/1.1[0m" 500 -
+2025-05-08 12:52:45,275 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 12:52:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:16:52,140 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\requests\\__init__.py', reloading
+2025-05-08 13:16:53,678 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 13:17:00,545 - __main__ - INFO - Starting data loading...
+2025-05-08 13:17:00,545 - __main__ - INFO - Starting background data loading...
+2025-05-08 13:17:01,652 - __main__ - INFO - Model loaded in 1.11 seconds
+2025-05-08 13:17:01,654 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 13:17:01,806 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 13:17:01,806 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 13:17:01,822 - __main__ - INFO - Initializing category encoder...
+2025-05-08 13:17:01,822 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 13:17:01,822 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 13:17:01,828 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 13:17:01,830 - __main__ - INFO - Data loaded and preprocessed in 0.18 seconds
+2025-05-08 13:17:01,830 - __main__ - INFO - Data loading completed successfully
+2025-05-08 13:17:01,830 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 13:17:01,867 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 13:17:01,874 - werkzeug - INFO -  * Debugger PIN: 109-119-063
+2025-05-08 13:17:01,987 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-08 13:17:01,988 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
+2025-05-08 13:31:38,998 - __main__ - INFO - Rendering index.html
+2025-05-08 13:31:39,029 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "GET / HTTP/1.1" 200 -
+2025-05-08 13:31:39,422 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,438 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,455 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,505 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,518 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,537 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,581 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 13:31:39,893 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:31:41,724 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:41] "GET /login HTTP/1.1" 200 -
+2025-05-08 13:31:41,776 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:41] "GET /static/images/login-portrait.jpg HTTP/1.1" 200 -
+2025-05-08 13:31:41,776 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:31:41,776 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:41] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:31:42,290 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:31:53,729 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:53] "POST /login HTTP/1.1" 200 -
+2025-05-08 13:31:53,773 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:31:53,784 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:53] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:31:53,801 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:53] "[36mGET /static/images/login-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:31:53,832 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:31:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:32:01,624 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:01] "GET /signup HTTP/1.1" 200 -
+2025-05-08 13:32:01,693 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:32:01,698 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:01] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:32:01,758 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:32:33,323 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2025-05-08 13:32:33,342 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "GET /login HTTP/1.1" 200 -
+2025-05-08 13:32:33,398 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:32:33,402 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:32:33,409 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "[36mGET /static/images/login-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:32:33,517 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:32:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:33:05,969 - __main__ - INFO - Rendering index.html
+2025-05-08 13:33:05,969 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:05] "GET / HTTP/1.1" 200 -
+2025-05-08 13:33:06,043 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,130 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,176 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,200 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,246 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,289 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,329 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 13:33:06,431 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:06] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:33:29,057 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:29] "GET /login HTTP/1.1" 200 -
+2025-05-08 13:33:29,149 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:33:29,163 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:29] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:33:29,171 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:29] "[36mGET /static/images/login-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 13:33:29,231 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 13:33:32,723 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:32] "GET /signup HTTP/1.1" 200 -
+2025-05-08 13:33:32,768 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 13:33:32,772 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:32] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 13:33:32,794 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 13:33:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 14:01:59,823 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-05-08 14:01:59,900 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-05-08 14:02:00,215 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
+2025-05-08 14:02:01,146 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:02:05,811 - __main__ - INFO - Starting data loading...
+2025-05-08 14:02:05,811 - __main__ - INFO - Starting background data loading...
+2025-05-08 14:02:06,867 - __main__ - INFO - Model loaded in 1.06 seconds
+2025-05-08 14:02:06,867 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 14:02:07,046 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 14:02:07,046 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 14:02:07,046 - __main__ - INFO - Initializing category encoder...
+2025-05-08 14:02:07,046 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 14:02:07,053 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 14:02:07,054 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 14:02:07,062 - __main__ - INFO - Data loaded and preprocessed in 0.19 seconds
+2025-05-08 14:02:07,062 - __main__ - INFO - Data loading completed successfully
+2025-05-08 14:02:07,066 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 14:02:07,093 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:02:07,096 - werkzeug - INFO -  * Debugger PIN: 109-119-063
+2025-05-08 14:02:07,215 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-08 14:02:07,215 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
+2025-05-08 14:02:11,258 - __main__ - INFO - Rendering index.html
+2025-05-08 14:02:11,317 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "GET / HTTP/1.1" 200 -
+2025-05-08 14:02:11,534 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,537 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/images/artistic-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,539 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,564 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/images/closeup-eye.jpg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,569 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/images/spring-portrait.jpg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,571 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,595 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[36mGET /static/images/diverse-beauty.jpg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:11,912 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 14:02:20,196 - __main__ - INFO - Rendering survey.html
+2025-05-08 14:02:20,229 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "GET /survey HTTP/1.1" 200 -
+2025-05-08 14:02:20,273 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,292 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/images/skin-tones/fair-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,300 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,301 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/images/skin-tones/medium-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,307 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,322 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[36mGET /static/images/skin-tones/deep-palette.svg HTTP/1.1[0m" 304 -
+2025-05-08 14:02:20,368 - __main__ - ERROR - Unhandled Exception: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-08 14:02:20,373 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\flask\\app.py', reloading
+2025-05-08 14:02:20,382 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\flask\\scaffold.py', reloading
+2025-05-08 14:02:20,385 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\flask\\helpers.py', reloading
+2025-05-08 14:02:20,387 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\app.py", line 518, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\scaffold.py", line 328, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\flask\helpers.py", line 700, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marshal\miniconda3\Lib\site-packages\werkzeug\utils.py", line 841, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+2025-05-08 14:02:20,387 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-08 14:02:20,414 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[35m[1mGET /static/images/makeUP12.jpg HTTP/1.1[0m" 500 -
+2025-05-08 14:02:20,433 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 14:02:21,543 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:02:25,705 - __main__ - INFO - Starting data loading...
+2025-05-08 14:02:25,706 - __main__ - INFO - Starting background data loading...
+2025-05-08 14:02:26,483 - __main__ - INFO - Model loaded in 0.78 seconds
+2025-05-08 14:02:26,483 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 14:02:26,631 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 14:02:26,631 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 14:02:26,641 - __main__ - INFO - Initializing category encoder...
+2025-05-08 14:02:26,645 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 14:02:26,646 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 14:02:26,648 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 14:02:26,650 - __main__ - INFO - Data loaded and preprocessed in 0.17 seconds
+2025-05-08 14:02:26,650 - __main__ - INFO - Data loading completed successfully
+2025-05-08 14:02:26,659 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 14:02:26,683 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:02:26,695 - werkzeug - INFO -  * Debugger PIN: 109-119-063
+2025-05-08 14:02:26,833 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-08 14:02:26,834 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
+2025-05-08 14:02:55,200 - __main__ - INFO - Starting get_product_recommendations
+2025-05-08 14:02:55,202 - __main__ - INFO - User profile: {'professional_review': 0, 'vibe_review': 1, 'redness_review': 0, 'dry_review': 1, 'light_coverage_review': 0, 'young_review': 1, 'mother_review': 0, 'skin_concerns_review': 1, 'white_review': 0, 'tan_review': 1, 'acne_review': 0, 'black_review': 0, 'comfortable_wear_review': 0.5, 'coverage_review': 0, 'medium_coverage_review': 1, 'full_coverage_review': 0, 'easy_use_review': 1, 'wrinkles_review': 0}
+2025-05-08 14:02:55,205 - __main__ - INFO - Max budget: 2000.0
+2025-05-08 14:02:55,205 - __main__ - INFO - Data loaded successfully
+2025-05-08 14:02:55,209 - __main__ - INFO - Product data columns: ['product_link_id', 'overall_product_rating', 'young', 'mother', 'professional', 'vibe', 'acne', 'dry', 'wrinkles', 'black', 'white', 'tan', 'redness', 'light_coverage', 'medium_coverage', 'full_coverage', 'sheer_finish', 'glowy_finish', 'matte_finish', 'expensive', 'inexpensive', 'skin_concerns', 'comfortable_wear', 'easy_use', 'pilling', 'shade_range', 'category', 'num_shades', 'num_reviews', 'young_review', 'mother_review', 'professional_review', 'vibe_review', 'acne_review', 'dry_review', 'wrinkles_review', 'black_review', 'white_review', 'tan_review', 'redness_review', 'light_coverage_review', 'medium_coverage_review', 'full_coverage_review', 'skin_concerns_review', 'comfortable_wear_review', 'easy_use_review']
+2025-05-08 14:02:55,217 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 14:02:55,220 - __main__ - INFO - Features needed for prediction: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 14:02:55,265 - __main__ - INFO - Encoding categories. Unique categories: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 14:02:55,276 - __main__ - INFO - Category encoding successful. Encoded values: [ 7  3 12 11  0  4  2  6  5 10  1  8  9]
+2025-05-08 14:02:55,293 - __main__ - INFO - Making predictions...
+2025-05-08 14:02:55,453 - __main__ - INFO - Predictions made successfully
+2025-05-08 14:02:55,483 - __main__ - INFO - Processing URL for Powder Blush Palette: https://www.ulta.com/p/powder-blush-palette-xlsImpprod14521197?sku=2535584
+2025-05-08 14:02:55,485 - __main__ - INFO - Processing URL for TruBlend Base Business Face Primer: https://www.ulta.com/p/trublend-base-business-face-primer-pimprod2000392?sku=2537277
+2025-05-08 14:02:55,488 - __main__ - INFO - Processing URL for WANDERful World Silky-Soft Powder Blush Mini: https://www.ulta.com/p/wanderful-world-silky-soft-powder-blush-mini-xlsImpprod13741141?sku=2595635
+2025-05-08 14:02:55,496 - __main__ - INFO - Processing URL for Blushed Duo: https://www.ulta.com/p/blushed-duo-pimprod2025280?sku=2583745
+2025-05-08 14:02:55,497 - __main__ - INFO - Processing URL for MegaGlo Blushlighter: https://www.ulta.com/p/megaglo-blushlighter-pimprod2013408?sku=2559287
+2025-05-08 14:02:55,497 - __main__ - INFO - Processing URL for Unlimited Blush: https://www.ulta.com/p/unlimited-blush-pimprod2032252?sku=2595747
+2025-05-08 14:02:55,499 - __main__ - INFO - Processing URL for Just Blushing Powder: https://www.ulta.com/p/just-blushing-powder-xlsImpprod15711055?sku=2505272
+2025-05-08 14:02:55,499 - __main__ - INFO - Processing URL for Golden Soleil Baked Bronzer: https://www.ulta.com/p/golden-soleil-baked-bronzer-xlsImpprod13361011?sku=2296130
+2025-05-08 14:02:55,504 - __main__ - INFO - Generated 8 recommendations
+2025-05-08 14:02:55,505 - __main__ - INFO - get_product_recommendations took 0.30 seconds to execute
+2025-05-08 14:02:55,523 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:55] "POST /recommend HTTP/1.1" 200 -
+2025-05-08 14:02:55,707 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-08 14:02:55,716 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-08 14:02:55,732 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:55] "[36mGET /static/images/makeup-tools.png HTTP/1.1[0m" 304 -
+2025-05-08 14:02:55,786 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:02:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 14:03:29,868 - werkzeug - INFO - 192.168.54.122 - - [08/May/2025 14:03:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-05-08 14:07:26,080 - werkzeug - INFO -  * Detected change in 'C:\\Users\\marshal\\miniconda3\\Scripts\\conda-script.py', reloading
+2025-05-08 14:07:27,447 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:07:45,624 - __main__ - INFO - Starting data loading...
+2025-05-08 14:07:45,624 - __main__ - INFO - Starting background data loading...
+2025-05-08 14:07:46,601 - __main__ - INFO - Model loaded in 0.98 seconds
+2025-05-08 14:07:46,601 - __main__ - INFO - Model feature names: ['young_review' 'mother_review' 'professional_review' 'vibe_review'
+ 'acne_review' 'dry_review' 'wrinkles_review' 'black_review'
+ 'white_review' 'tan_review' 'redness_review' 'light_coverage_review'
+ 'medium_coverage_review' 'full_coverage_review' 'skin_concerns_review'
+ 'comfortable_wear_review' 'easy_use_review' 'category' 'num_shades'
+ 'num_reviews' 'young' 'mother' 'professional' 'vibe' 'acne' 'dry'
+ 'wrinkles' 'black' 'white' 'tan' 'redness' 'light_coverage'
+ 'medium_coverage' 'full_coverage' 'sheer_finish' 'glowy_finish'
+ 'matte_finish' 'expensive' 'inexpensive' 'skin_concerns'
+ 'comfortable_wear' 'easy_use' 'pilling' 'shade_range']
+2025-05-08 14:07:46,739 - __main__ - INFO - Cleaning and validating URLs...
+2025-05-08 14:07:46,755 - __main__ - INFO - URL Statistics: 1373/1373 valid URLs
+2025-05-08 14:07:46,755 - __main__ - INFO - Initializing category encoder...
+2025-05-08 14:07:46,762 - __main__ - INFO - Category encoder initialized: LabelEncoder()
+2025-05-08 14:07:46,762 - __main__ - INFO - Unique categories before encoding: ['Foundation' 'Color Correcting' nan 'Tinted Moisturizer' 'BB & CC Creams'
+ 'Concealer' 'Bronzer' 'Face Primer' 'Contouring' 'Setting Spray & Powder'
+ 'Blush' 'Highlighter' 'Makeup Remover']
+2025-05-08 14:07:46,762 - __main__ - INFO - Category encoder fitted. Classes: ['BB & CC Creams' 'Blush' 'Bronzer' 'Color Correcting' 'Concealer'
+ 'Contouring' 'Face Primer' 'Foundation' 'Highlighter' 'Makeup Remover'
+ 'Setting Spray & Powder' 'Tinted Moisturizer' nan]
+2025-05-08 14:07:46,771 - __main__ - INFO - Data loaded and preprocessed in 0.17 seconds
+2025-05-08 14:07:46,771 - __main__ - INFO - Data loading completed successfully
+2025-05-08 14:07:46,777 - __main__ - INFO - Initial data loading completed successfully
+2025-05-08 14:07:46,810 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:07:46,834 - werkzeug - INFO -  * Debugger PIN: 109-119-063
+2025-05-08 14:07:46,976 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-08 14:07:46,977 - werkzeug - INFO -  * Running on http://192.168.54.122:5000/ (Press CTRL+C to quit)
